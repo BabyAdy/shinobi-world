@@ -1,0 +1,55 @@
+export const clansData = [
+  {
+    id: "uchiha",
+    name: "Uchiha Clan",
+    image: "https://i.imgur.com/Ar7Wz3A.png",
+    founder: "Indra Ōtsutsuki",
+    leader: "Fugaku Uchiha (Last)",
+    natureAffinity: ["Fire Release", "Lightning Release"],
+    affiliation: ["Konohagakure"],
+    kekkeiGenkai: ["Sharingan", "Mangekyō Sharingan", "Eternal Mangekyō Sharingan"],
+    kekkeiTota: null,
+    kekkeiMora: null,
+    members: [
+      { id: "madara-uchiha", name: "Madara Uchiha", role: "Co-Founder & Ex-Clan Leader / Defector", abilities: ["Ten-Tails Jinchūriki", "Eternal Mangekyō Sharingan", "Izanagi", "Perfect Susanoo",  "Rinnegan", "Mokuton"] },
+      { id: "obito-uchiha", name: "Obito Uchiha", role: "Missing-in-Action Member / Shadow Manipulator of the Clan", abilities: ["Mangekyō Sharingan", "Kamui", "Izanagi", "Mokuton", "Rinnegan", "Ten-Tails Jinchūriki"] },
+      { id: "itachi-uchiha", name: "Itachi Uchiha", role: "Clan Elite Shinobi / Executor of the Uchiha Clan Downfall", abilities: ["Mangekyō Sharingan", "Tsukuyomi", "Amaterasu", "Susanoo", "Izanami"] },
+      { id: "sasuke-uchiha", name: "Sasuke Uchiha", role: "Clan Massacre Survivor / Avenger of the Clan", abilities: ["Eternal Mangekyō Sharingan", "Amaterasu", "Perfect Susanoo", "Rinnegan", "Chidori"] },
+      { id: "sakura-haruno", name: "Sakura Uchiha", role: "Clan Matriarch / Wife of Sasuke Uchiha", abilities: ["Strength", "Healing", "Chakra Control"] },
+      { id: "sarada-uchiha", name: "Sarada Uchiha", role: "Clan Descendant (New Generation)", abilities: ["Mangekyō Sharingan", "Sharingan", "Cherry Blossom Impact", "Katon", "Raiton", "Chidori"] },
+      { id: "shisui-uchiha", name: "Shisui Uchiha", role: "Clan Elite Shinobi / Shadow Protector of the Clan", abilities: ["Mangekyō Sharingan", "Kotoamatsukami", "Susanoo"] },
+      { id: "fugaku-uchiha", name: "Fugaku Uchiha", role: "Last Official Clan Leader / Head of the Uchiha Military Police", abilities: ["Mangekyō Sharingan", "Katon", "Tactical Genius"] },
+      { id: "mikoto-uchiha", name: "Mikoto Uchiha", role: "Clan Jōnin / Wife of Clan Leader Fugaku", abilities: ["Sharingan", "Shurikenjutsu Master", "Katon"] },
+      { id: "izuna-uchiha", name: "Izuna Uchiha", role: "Second-in-Command during Warring States Era / Leader's Brother", abilities: ["Mangekyō Sharingan", "Kenjutsu Mastery", "Katon"] },
+      { id: "tajima-uchiha", name: "Tajima Uchiha", role: "Clan Leader during Warring States Era / Father of Madara & Izuna", abilities: ["Sharingan", "Kenjutsu Mastery", "Clan War Tactics"] },
+      { id: "kagami-uchiha", name: "Kagami Uchiha", role: "Clan Shinobi loyal to Konoha's Will / Ancestor of Shisui", abilities: ["Sharingan", "High Tactical Acumen", "Advanced Chakra Nature Transformation"] },
+      { id: "naori-uchiha", name: "Naori Uchiha", role: "Historical Clan Kunoichi / Creator of Izanami", abilities: ["Sharingan", "Mangekyō Sharingan", "Izanami"] },
+      { id: "naka-uchiha", name: "Naka Uchiha", role: "Historical Clan Shinobi / Fighter in the Clan's Internal Wars", abilities: ["Sharingan", "Izanagi", "Kenjutsu"] },
+      { id: "rai-uchiha", name: "Rai Uchiha", role: "Historical Clan Shinobi / Faction Leader in the Clan's Internal War", abilities: ["Sharingan", "Izanagi"] },
+      { id: "baru-uchiha", name: "Baru Uchiha", role: "Historical Clan Shinobi / Fighter in the Clan's Internal Wars", abilities: ["Sharingan", "Izanagi"] },
+    ]
+  },
+  {
+    id: "uzumaki",
+    name: "Uzumaki Clan",
+    image: "https://i.imgur.com/iT0cnT4.png",
+    founder: "Asura Ōtsutsuki",
+    leader: "Ashina Uzumaki (Last Known)",
+    natureAffinity: ["Wind Release", "Water Release"],
+    affiliation: ["Uzushiogakure", "Konohagakure"],
+    kekkeiGenkai: null,
+    kekkeiTota: null,
+    kekkeiMora: null,
+    members: [
+      { id: "ashina-uzumaki", name: "Ashina Uzumaki", role: "Leader & Progenitor of the Clan during Konoha's Founding", abilities: ["Sealing", "Lifeforce", "Immense Chakra"] },
+      { id: "mito-uzumaki", name: "Mito Uzumaki", role: "Clan Princess / First Nine-Tails Jinchūriki of Konoha", abilities: ["Sensory", "Lifeforce", "Immense Chakra", "Longevity"] },
+      { id: "kushina-uzumaki", name: "Kushina Uzumaki", role: "Clan Descendant / Second Nine-Tails Jinchūriki of Konoha", abilities: ["Sealing Chains", "Lifeforce", "Immense Chakra"] },
+      { id: "naruto-uzumaki", name: "Naruto Uzumaki", role: "Clan Descendant / Hokage & Savior of the Shinobi World", abilities: ["Immense Chakra", "Lifeforce", "Healing", "Sensory"] },
+      { id: "hinata-hyuga", name: "Hinata Uzumaki", role: "Clan Matriarch / Wife of Naruto Uzumaki", abilities: ["Byakugan", "Taijutsu", "Vision"] },
+      { id: "boruto-uzumaki", name: "Boruto Uzumaki", role: "New Generation Descendant / Prodigy of the Clan", abilities: ["Taijutsu", "Ninjutsu", "Otsutsuki Genetic Compatibility"] },
+      { id: "himawari-uzumaki", name: "Himawari Uzumaki", role: "New Generation Descendant / Hyuga-Uzumaki Lineage", abilities: ["Byakugan", "Taijutsu", "Reflexes"] },
+      { id: "nagato", name: "Nagato Uzumaki", role: "Clan Descendant (Ame Faction) / Godlike Shinobi", abilities: ["Rinnegan", "Lifeforce", "Immense Chakra"] },
+      { id: "karin", name: "Karin Uzumaki", role: "Clan Survivor / Grass Village Refugee", abilities: ["Sensory", "Healing", "Sealing Chains"] }
+    ]
+  } 
+];

@@ -1,0 +1,33 @@
+{
+    id: "",
+    name: "",
+    mainAvatar: "",
+    avatars: {
+      avatar: ""
+    },
+    description: "",
+    abilities: [],
+    birthday: "",
+    sex: "",
+    status: "",
+    bloodType: "",
+    kekkeiGenkai: null,
+    kekkeiTota: null,
+    kekkeiMora: null,
+    classification: [""],
+    tailedBeast: [""],
+    occupation: [""],
+    affiliation: [""],
+    team: [""],
+    clan: [{ name: "" }],
+    ninjaRank: "",
+    natureType: [
+      { name: "" },
+    ],
+    family: [
+      { name: "", relation: "" },
+    ],
+    jutsu: [""],
+    tools: [""],
+    gallery: [],
+  },
