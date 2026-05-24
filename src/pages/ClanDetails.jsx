@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { clansData } from '../data/clansData';
 import { charactersData } from '../data/charactersData';
+import { jutsusData } from '../data/jutsusData';
 import Navbar from '../components/Navbar';
 
 const roleColors = {
@@ -34,9 +35,14 @@ const roleColors = {
 const abilityIcons = {
   "sharingan": "https://i.imgur.com/dv8piFl.png",
   "mangekyō sharingan": "https://i.imgur.com/kZtP86r.png",
+  "mangekyo-sharingan": "https://i.imgur.com/kZtP86r.png",
+  "eternal-mangekyo-sharingan": "https://i.imgur.com/lS4DqLk.png",
   "eternal mangekyō sharingan": "https://i.imgur.com/lS4DqLk.png",
   "rinnegan": "https://i.imgur.com/ISu8ah4.png",
+  "rinne sharingan": "https://i.imgur.com/PilaNKQ.png",
   "byakugan": "https://i.imgur.com/4DVK3Sh.png",
+  "jōgan": "https://i.imgur.com/6T4V9Pr.png",
+  "kokugan": "https://i.imgur.com/JUcCbhm.png",
   "katon": "https://i.imgur.com/6G0ellT.png",
   "raiton": "https://i.imgur.com/scbuDt0.png",
   "mokuton": "https://i.imgur.com/OxsfWW3.png",
@@ -57,46 +63,14 @@ const natureIcons = {
 
 const abilityColors = {
   "sharingan": "border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "mangekyō sharingan": "border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "eternal mangekyō sharingan": "border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "sage mode": "border-orange-500/50 text-orange-500 bg-orange-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
+  "mangekyō sharingan": "border-red-700/50 text-red-700 bg-red-700/10 shadow-[0_0_8px_rgba(185,28,28,0.3)]",
+  "eternal mangekyō sharingan": "border-red-700/50 text-red-700 bg-red-700/10 shadow-[0_0_8px_rgba(185,28,28,0.3)]",
   "rinnegan": "border-purple-500/50 text-purple-500 bg-purple-500/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "perfect susanoo": "border-purple-600/50 text-purple-600 bg-purple-600/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "susanoo": "border-purple-400/50 text-purple-400 bg-purple-400/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "izanagi": "border-red-400/50 text-red-400 bg-red-400/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "izanami": "border-red-400/50 text-red-400 bg-red-400/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "mokuton": "border-green-500/50 text-green-500 bg-green-500/10 shadow-[0_0_8px_rgba(34,197,94,0.3)]",
-  "ten-tails jinchūriki": "border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "tsukuyomi": "border-red-800/50 text-red-900 bg-red-800/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "amaterasu": "border-red-900/50 text-red-900 bg-red-900/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "kamui": "border-red-700/50 text-red-700 bg-red-700/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "kotoamatsukami": "border-red-800/50 text-red-900 bg-red-800/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "chidori": "border-cyan-200/50 text-cyan-400 bg-cyan-300/10 shadow-[0_0_8px_rgba(34,211,238,0.3)]",
-  "cherry blossom impact": "border-purple-100/50 text-pink-500 bg-purple-300/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "katon": "border-rose-700/50 text-rose-700 bg-rose-700/10 shadow-[0_0_8px_rgba(239,68,68,0.3)]",
-  "raiton": "border-yellow-400/50 text-yellow-900 bg-yellow-400/10 shadow-[0_0_8px_rgba(250,204,21,0.3)]",
-  "tactical genius": "border-yellow-400/50 text-yellow-900 bg-yellow-400/10 shadow-[0_0_8px_rgba(250,204,21,0.3)]",
-  "shurikenjutsu master": "border-blue-400/50 text-blue-700 bg-blue-400/10 shadow-[0_0_8px_rgba(96,165,250,0.3)]",
-  "kenjutsu mastery": "border-blue-400/50 text-blue-700 bg-blue-400/10 shadow-[0_0_8px_rgba(96,165,250,0.3)]",
-  "clan war tactics": "border-yellow-400/50 text-yellow-700 bg-yellow-400/10 shadow-[0_0_8px_rgba(250,204,21,0.3)]",
-  "high tactical acumen": "border-green-400/50 text-green-700 bg-green-400/10 shadow-[0_0_8px_rgba(34,197,94,0.3)]",
-  "advanced chakra nature transformation": "border-green-400/50 text-green-900 bg-green-400/10 shadow-[0_0_8px_rgba(34,197,94,0.3)]",
-  "kenjutsu": "border-blue-400/50 text-blue-700 bg-blue-400/10 shadow-[0_0_8px_rgba(96,165,250,0.3)]",
-  "strength": "border-pink-400/50 text-pink-700 bg-pink-400/10 shadow-[0_0_8px_rgba(239,68,68,0.3)]",
-  "healing": "border-emerald-400/50 text-emerald-700 bg-emerald-400/10 shadow-[0_0_8px_rgba(100,245,146,0.3)]",
-  "chakra control": "border-purple-100/50 text-purple-400 bg-purple-300/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "sealing": "border-orange-400/50 text-orange-700 bg-orange-400/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
-  "sealing chains": "border-orange-400/50 text-orange-700 bg-orange-400/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
-  "lifeforce": "border-blue-400/50 text-blue-700 bg-blue-400/10 shadow-[0_0_8px_rgba(96,165,250,0.3)]",
-  "immense chakra": "border-yellow-400/50 text-yellow-700 bg-yellow-400/10 shadow-[0_0_8px_rgba(250,204,21,0.3)]",
-  "sensory": "border-red-600/50 text-yellow-700 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
-  "byakugan": "border-purple-100/50 text-purple-400 bg-purple-300/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]",
-  "taijutsu": "border-green-300/50 text-green-700 bg-green-300/10 shadow-[0_0_8px_rgba(34,197,94,0.3)]",
-  "ninjutsu": "border-blue-400/50 text-blue-700 bg-blue-400/10 shadow-[0_0_8px_rgba(96,165,250,0.3)]",
-  "vision": "border-cyan-200/50 text-cyan-400 bg-cyan-300/10 shadow-[0_0_8px_rgba(34,211,238,0.3)]",
-  "otsutsuki genetic compatibility": "border-zinc-400/50 text-zinc-700 bg-zinc-400/10 shadow-[0_0_8px_rgba(156,163,175,0.3)]",
-  "reflexes": "border-emerald-400/50 text-emerald-700 bg-emerald-400/10 shadow-[0_0_8px_rgba(100,245,146,0.3)]",
-  "longevity": "border-rose-400/50 text-rose-700 bg-rose-400/10 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
+  "rinne sharingan": "border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]",
+  "byakugan": "border-purple-100/10 text-purple-400 bg-purple-100/10 shadow-[0_0_8px_rgba(147,51,234,0.3)]",
+  "jōgan": "border-purple-100/10 text-purple-400 bg-purple-100/10 shadow-[0_0_8px_rgba(147,51,234,0.3)]",
+  "kokugan": "border-yellow-100/10 text-yellow-400 bg-yellow-100/10 shadow-[0_0_8px_rgba(234,179,8,0.3)]",
+  "wood release": "border-emerald-800/50 text-emerald-800 bg-emerald-800/10 shadow-[0_0_8px_rgba(100,245,146,0.3)]",
 };
 
 const affiliationColors = {
@@ -130,11 +104,20 @@ const ClanDetails = ({ id }) => {
   if (!clan) return <div className="min-h-screen bg-black flex items-center justify-center text-white">Clan not found</div>;
 
   const handleLinkClick = (name) => {
+    const lowName = name.toLowerCase();
     // Curățăm numele (ex: "Fugaku Uchiha (Last)" -> "Fugaku Uchiha") pentru a găsi potrivirea în charactersData
     const cleanName = name.split(' (')[0]; 
     const targetChar = charactersData.find(c => c.name.toLowerCase() === cleanName.toLowerCase());
+    
     if (targetChar) {
       window.location.hash = `#character/${targetChar.id}`;
+      return;
+    }
+
+    // Verificăm dacă este o abilitate
+    const targetJutsu = jutsusData.find(j => j.name.toLowerCase() === lowName || j.id.toLowerCase() === lowName);
+    if (targetJutsu) {
+      window.location.hash = `#abilities/${targetJutsu.id}`;
     }
   };
 
@@ -208,9 +191,9 @@ const ClanDetails = ({ id }) => {
             <InfoField label="Affiliation" value={clan.affiliation} mapping={affiliationColors} iconMapping={affiliationIcons} />
           </div>
           <div className="space-y-2">
-            <InfoField label="Kekkei Genkai" value={clan.kekkeiGenkai} mapping={abilityColors} iconMapping={abilityIcons} />
-            <InfoField label="Kekkei Tota" value={clan.kekkeiTota} />
-            <InfoField label="Kekkei Mora" value={clan.kekkeiMora} />
+            <InfoField label="Kekkei Genkai" value={clan.kekkeiGenkai} mapping={abilityColors} iconMapping={abilityIcons} isLink={true} />
+            <InfoField label="Kekkei Tota" value={clan.kekkeiTota} mapping={abilityColors} iconMapping={abilityIcons} isLink={true} />
+            <InfoField label="Kekkei Mora" value={clan.kekkeiMora} mapping={abilityColors} iconMapping={abilityIcons} isLink={true} />
           </div>
         </div>
 
@@ -252,7 +235,8 @@ const ClanDetails = ({ id }) => {
                     {member.abilities.map((ability, i) => (
                       <span 
                         key={i} 
-                        className={`px-3 py-1 text-[10px] font-black uppercase border rounded-sm flex items-center gap-2 ${abilityColors[ability.toLowerCase()] || defaultTagStyle}`}
+                        onClick={() => handleLinkClick(ability)}
+                        className={`px-3 py-1 text-[10px] font-black uppercase border rounded-sm flex items-center gap-2 cursor-pointer hover:underline decoration-shinobi-orange transition-all ${abilityColors[ability.toLowerCase()] || defaultTagStyle}`}
                       >
                         {abilityIcons[ability.toLowerCase()] && (
                           <div className="w-3 h-3 flex-shrink-0 flex items-center justify-center">

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { charactersData } from '../data/charactersData';
+import { clansData } from '../data/clansData';
+import { jutsusData } from '../data/jutsusData';
 import Navbar from '../components/Navbar';
 
 const clanColors = {
   uchiha: 'border-red-600/50 text-red-600 bg-red-600/10 shadow-[0_0_8px_rgba(220,38,38,0.3)]',
   uzumaki: 'border-orange-400/50 text-orange-500 bg-orange-400/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]',
-  hyuga: 'border-purple-400/50 text-purple-300 bg-purple-400/10 shadow-[0_0_8px_rgba(147,51,234,0.3)]',
+  hyūga: 'border-purple-400/50 text-purple-300 bg-purple-400/10 shadow-[0_0_8px_rgba(147,51,234,0.3)]',
   hatake: 'border-yellow-300/30 text-yellow-300 bg-yellow-300/10 shadow-[0_0_8px_rgba(234,179,8,0.3)]',
   senju: 'border-emerald-400/50 text-emerald-600 bg-emerald-400/10 shadow-[0_0_8px_rgba(100,245,146,0.3)]',
   nara: 'border-gray-400/50 text-gray-400 bg-gray-400/10 shadow-[0_0_8px_rgba(156,163,175,0.3)]',
@@ -259,7 +261,7 @@ const abilityColors = {
 };
 
 const jutsuColors = {
-  "all directions shuriken": "border-orange-500/50 text-orange-400 bg-orange-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
+  "multiple shadow clone technique": "border-orange-500/50 text-orange-400 bg-orange-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
   "rasengan": "border-cyan-500/50 text-cyan-400 bg-cyan-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
   "baryon mode": "border-orange-500/50 text-orange-400 bg-orange-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
   "sage mode": "border-orange-500/50 text-orange-400 bg-orange-500/10 shadow-[0_0_8px_rgba(249,115,22,0.3)]",
@@ -431,10 +433,21 @@ const CharacterDetails = ({ id }) => {
   };
 
   const handleLinkClick = (label, name) => {
+    const lowName = name.toLowerCase();
     if (label === "Family") {
       const targetChar = charactersData.find(c => c.name.toLowerCase() === name.toLowerCase());
       if (targetChar) {
         window.location.hash = `#character/${targetChar.id}`;
+      }
+    } else if (label === "Clan") {
+      const targetClan = clansData.find(c => c.name.toLowerCase() === lowName || c.id.toLowerCase() === lowName);
+      if (targetClan) {
+        window.location.hash = `#clans/${targetClan.id}`;
+      }
+    } else if (["Kekkei Genkai", "Kekkei Tota", "Kekkei Mora"].includes(label)) {
+      const targetJutsu = jutsusData.find(j => j.name.toLowerCase() === lowName || j.id.toLowerCase() === lowName);
+      if (targetJutsu) {
+        window.location.hash = `#abilities/${targetJutsu.id}`;
       }
     }
   };
@@ -538,9 +551,9 @@ const CharacterDetails = ({ id }) => {
             <ShinobiField label="Sex" value={selectedChar.sex} />
             <ShinobiField label="Status" value={selectedChar.status} />
             <ShinobiField label="Blood type" value={selectedChar.bloodType} />
-            <ShinobiField label="Kekkei Genkai" value={selectedChar.kekkeiGenkai} />
-            <ShinobiField label="Kekkei Tota" value={selectedChar.kekkeiTota} />
-            <ShinobiField label="Kekkei Mora" value={selectedChar.kekkeiMora} />
+            <ShinobiField label="Kekkei Genkai" value={selectedChar.kekkeiGenkai} isLink={true} />
+            <ShinobiField label="Kekkei Tota" value={selectedChar.kekkeiTota} isLink={true} />
+            <ShinobiField label="Kekkei Mora" value={selectedChar.kekkeiMora} isLink={true} />
             <ShinobiField label="Classification" value={selectedChar.classification} />
             <ShinobiField label="Tailed Beast" value={selectedChar.tailedBeast} />
             <ShinobiField label="Occupation" value={selectedChar.occupation} />

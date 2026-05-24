@@ -4,7 +4,7 @@ export const navbarLinks = [
   { name: "Clans", id: "clans" },
   { name: "Villages", id: "villages" },
   { name: "Organization", id: "organization" },
-  { name: "Jutsu", id: "jutsu" },
+  { name: "Abilities", id: "abilities" },
   { name: "Beast Tails", id: "beast-tails" },
   { name: "Chapters", id: "chapters" },
   { name: "Others Information", id: "others" },

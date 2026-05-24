@@ -48,7 +48,7 @@ function App() {
       return id ? <OrganizationDetails id={id} key={id} /> : <Organizations />;
     }
 
-    if (base === '#jutsu') {
+    if (base === '#abilities') {
       return id ? <JutsuDetails id={id} key={id} /> : <Jutsus />;
     }
 
